@@ -43,14 +43,14 @@ export default function Home() {
         ) : (
           <>
             <span className="text-gray-700 text-sm">
-                Hello,{' '}
-                <Link
-                    to="/profile"
-                    className="text-blue-600 hover:underline font-medium"
-                >
-                    {username}
-                </Link>!
-                </span>
+              Hello,{' '}
+              <Link
+                to="/profile"
+                className="text-blue-600 hover:underline font-medium"
+              >
+                {username}
+              </Link>!
+            </span>
             <button
               onClick={handleLogout}
               className="bg-red-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
@@ -91,7 +91,9 @@ export default function Home() {
 
         {/* Loading and Error States */}
         {isLoading ? (
-          <p className="text-center text-gray-500">Loading subdomains...</p>
+          <div className="flex justify-center items-center h-64">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-lime-500 border-solid"></div>
+          </div>
         ) : error ? (
           <p className="text-center text-red-500">Error: {error}</p>
         ) : (

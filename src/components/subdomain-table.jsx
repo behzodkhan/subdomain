@@ -14,10 +14,11 @@ import { Search } from 'lucide-react';
 function SubdomainTable({ subdomains }) {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredSubdomains = subdomains.filter((subdomain) =>
-    subdomain.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    subdomain.purpose.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredSubdomains = subdomains
+    .filter((subdomain) =>
+      subdomain.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      subdomain.purpose.toLowerCase().includes(searchTerm.toLowerCase())
+    )
 
   return (
     <div className="space-y-6 py-4">
